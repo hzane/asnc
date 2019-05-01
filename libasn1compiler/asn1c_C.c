@@ -415,8 +415,8 @@ asn1c_lang_C_type_SEQUENCE_def(arg_t *arg, asn1c_ioc_table_and_objset_t *opt_ioc
 	asn1p_expr_t *expr = arg->expr;
 	asn1p_expr_t *v;
 	int elements;	/* Number of elements */
-	int first_extension = -1;
-	tag2el_t *tag2el = NULL;
+    int first_extension = compute_extensions_start(expr);
+    tag2el_t *tag2el = NULL;
 	int tag2el_count = 0;
 	int tags_count;
 	int all_tags_count;
